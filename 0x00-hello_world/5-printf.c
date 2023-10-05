@@ -1,11 +1,9 @@
 #include <stdio.h>
 
 /**
+ * main - Entry Point
  *
- * main: Entry Point 
- *
- * prints text and return 0
- 
+ * Return: Always 0 (Success)
  */
 int main(void)
 {
