@@ -15,7 +15,6 @@ int main(void)
 		putchar((char)ascii_alphabet_start);
 		ascii_alphabet_start++;
 	}
-	
 	putchar('\n');
 	return (0);
 }
