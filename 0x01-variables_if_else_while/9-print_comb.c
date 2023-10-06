@@ -12,11 +12,6 @@ int main(void)
 	for (; i < 10; i++)
 		putchar(i + '0');
 
-	i = 97;
-
-	for (; i < 103; i++)
-		putchar((char)i);
-
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
