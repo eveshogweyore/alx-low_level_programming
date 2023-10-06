@@ -13,9 +13,9 @@ int main(void)
 	while (ascii_alphabet_start <= ascii_alphabet_end)
 	{
 		putchar((char)ascii_alphabet_start);
-		putchar('\n');
 		ascii_alphabet_start++;
 	}
-
+	
+	putchar('\n');
 	return (0);
 }
