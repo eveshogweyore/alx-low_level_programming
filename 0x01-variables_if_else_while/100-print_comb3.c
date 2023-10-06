@@ -16,14 +16,14 @@ int main(void)
 		/*printf("i is %d\n", i);*/
 		for (; j <= 9; j++)
 		{
-			if (i == j || track == j)
+			if (i > 0 && j <= i)
 				continue;
 			putchar(i + '0');
 			putchar(j + '0');
 			putchar(',');
 			putchar(' ');
 		}
-		track = i;
+		track++;
 		j = 0;
 	}
 
