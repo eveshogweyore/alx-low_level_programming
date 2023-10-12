@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	int i, fbool, sbool, count = 0;
+	int i, fbool, sbool;
 	long int fnum, snum, fibo, fibo2, n11, n22;
 
 	fnum = 1;
@@ -44,8 +44,7 @@ int main(void)
 		}
 		if (((fnum + snum) < 0) && fbool == 1)
 			fbool = 0;
-		count++;
 	}
-	printf("\n%d\n", count);
+	printf("\n");
 	return (0);
 }
