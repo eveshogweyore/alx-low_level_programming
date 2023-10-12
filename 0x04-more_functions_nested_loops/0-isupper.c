@@ -7,7 +7,7 @@
  * Return: On success 1.
  * On error, 0 is returned.
  */
-int _islower(int c)
+int _isupper(int c)
 {
 	c = (char)c;
 
