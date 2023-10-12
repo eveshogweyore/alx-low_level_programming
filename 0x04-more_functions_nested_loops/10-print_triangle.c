@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_triangle - Print straight line in terminal
- * @n: specifies the height of triangle
+ * print_triangle - Print a triangle
+ * @size: Height of triangle
  *
  * Return: void
  */
