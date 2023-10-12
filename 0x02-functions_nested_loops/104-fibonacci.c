@@ -28,7 +28,7 @@ int main(void)
 			if (sbool)
 			{
 				n11 = fnum % 1000000000;
-				n22 = fnum % 1000000000;
+				n22 = snum % 1000000000;
 				fnum = fnum / 1000000000;
 				snum = snum / 1000000000;
 				sbool = 0;
