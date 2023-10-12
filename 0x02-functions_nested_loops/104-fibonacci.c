@@ -14,7 +14,7 @@ int main(void)
 	snum = 2;
 	fbool = sbool = 1;
 	printf("%ld, %ld", fnum, snum);
-	for (i = 0; i < 96; i++)
+	for (i = 0; i < 98; i++)
 	{
 		if (fbool)
 		{
