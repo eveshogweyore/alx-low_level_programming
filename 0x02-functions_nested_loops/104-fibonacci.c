@@ -7,14 +7,14 @@
  */
 int main(void)
 {
-	int i, fbool, sbool;
+	int i, fbool, sbool, count = 0;
 	long int fnum, snum, fibo, fibo2, n11, n22;
 
 	fnum = 1;
 	snum = 2;
 	fbool = sbool = 1;
 	printf("%ld, %ld", fnum, snum);
-	for (i = 0; i < 98; i++)
+	for (i = 0; i < 96; i++)
 	{
 		if (fbool)
 		{
@@ -44,7 +44,8 @@ int main(void)
 		}
 		if (((fnum + snum) < 0) && fbool == 1)
 			fbool = 0;
+		count++;
 	}
-	printf("\n");
+	printf("\n%d\n", count);
 	return (0);
 }
