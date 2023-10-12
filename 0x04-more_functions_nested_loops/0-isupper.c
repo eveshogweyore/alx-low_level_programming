@@ -11,7 +11,7 @@ int _isupper(int c)
 {
 	c = (char)c;
 
-	if (c >= 'A' && c <= 'B')
+	if (c >= 'A' && c <= 'Z')
 		return (1);
 	return (0);
 }
