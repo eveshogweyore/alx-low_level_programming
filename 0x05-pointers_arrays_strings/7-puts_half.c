@@ -16,6 +16,7 @@ void puts_half(char *str)
 		length++;
 		end++;
 	}
+	/*Assign var i the start of the last n chars if odd or even*/
 	i = (length % 2 != 0) ? (length / 2) + 1 : length / 2;
 	for (; i < length; i++)
 		_putchar(str[i]);
