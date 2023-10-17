@@ -3,7 +3,7 @@
 /**
  * print_array - prints n elements of an integer array
  * @a - The array
- * @b - The number of elements of array to be printed
+ * @n - The number of elements of array to be printed
  *
  * Return: void
  */
@@ -16,7 +16,8 @@ void print_array(int *a, int n)
 		if (i < n - 1)
 			printf("%d, ", a[i]);
 		else
-			printf("%d\n", a[i]);
+			printf("%d", a[i]);
 	}
+	printf("\n");
 	/*_putchar('\n');*/
 }
