@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * *_strcpy - copies the string pointed to by a 
+ * *_strcpy - copies the string pointed to by a
  * var to another variable
  * @dest: The destination variable
  * @src: The source variable
@@ -11,7 +11,7 @@
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
-	
+
 	while (src[i])
 	{
 		*(dest + i) = *(src + i);
