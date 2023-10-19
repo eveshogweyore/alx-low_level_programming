@@ -17,8 +17,8 @@ char *cap_string(char *str)
 	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			continue;
-		if (str[i] == '\t')
-			str[i] = ' ';
+		/*if (str[i] == '\t')
+			str[i] = ' ';*/
 		if (is_separator(str[i]) == 1)
 			continue;
 		if (is_separator(str[i - 1]) != 1)
