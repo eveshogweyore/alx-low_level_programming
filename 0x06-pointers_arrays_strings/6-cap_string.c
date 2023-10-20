@@ -9,23 +9,19 @@ int is_separator(char token);
  */
 char *cap_string(char *str)
 {
-	int i, len = 0;
+	int i = 0;
 
-	while (str[len])
-		len++;
-	for (i = 0; i < len; i++)
-	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			continue;
-		if (str[i] >= '0' && str[i] <= '9')
-			continue;
-		if (str[i] == '\t')
-			str[i] = ' ';
-		if (is_separator(str[i]) == 1)
-			continue;
-		if (is_separator(str[i - 1]) != 1 && i != 0)
-			continue;
+	if (str[i] >= 'a' && str[i] <= 'z')
 		str[i] -= 32;
+	i++;
+	while (str[i] != '\0')
+	{
+		if (is_separator(str[i]) == 1)
+		{
+			if (str[i + 1] >= 'a' && str[i + 1] <= 'z')
+				str[i + 1] -= 32;
+		}
+		i++;
 	}
 	return (str);
 }
