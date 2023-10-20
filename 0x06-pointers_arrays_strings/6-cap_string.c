@@ -23,7 +23,7 @@ char *cap_string(char *str)
 			str[i] = ' ';
 		if (is_separator(str[i]) == 1)
 			continue;
-		if (is_separator(str[i - 1]) != 1)
+		if (is_separator(str[i - 1]) != 1 && i != 0)
 			continue;
 		str[i] -= 32;
 	}
