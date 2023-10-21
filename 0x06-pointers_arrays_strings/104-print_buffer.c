@@ -10,13 +10,13 @@ int lengthof(char *);
  */
 void print_buffer(char *b, int size)
 {
-	char hexvalues[24];
+	char hexvalues[29];
 	int i, j, k, l, m, diff, hold;
 
 	if (size <= 0)
 		printf("\n");
 
-	for (i = 0; i <= size; i += 10)
+	for (i = 0; i < size; i += 10)
 	{
 		diff = size - i;
 		if (diff < 10)
