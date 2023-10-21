@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stdio.h>
+
 /**
  * infinite_add - adds to numbers in string format
  * @n1: The first number
