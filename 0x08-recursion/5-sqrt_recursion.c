@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * _sqrt_recursive - guesses numbers to check for sqare root
+ * @guess: number beginning at 1
+ * @n: number being checked for
+ *
+ * Return: Success (guess), Fail (-1)
+ */
+int _sqrt_recursive(int guess, int n)
+{
+	if (guess * guess == n)
+		return (guess);
+	else if (guess * guess < n)
+		return (_sqrt_recursive(n, guess + 1));
+	else
+		return (-1);
+}
+
+/**
  * _sqrt_recursion - returns the natural square root of a number
  * @n: number to check for
  *
@@ -8,18 +25,10 @@
  */
 int _sqrt_recursion(int n)
 {
-	static int i = 0;
-
 	if (n < 0)
 		return (-1);
-	if ((i * i) > n)
-		return (-1);
-	if ((i * i) != n)
-	{
-		i++;
-		_sqrt_recursion(n);
-	}
-	if ((i * i) == n)
-		return (i);
-	return (-1);
+	if (n == 0)
+		return (0);
+	else
+		return (_sqrt_recursive(n, 1));
 }
