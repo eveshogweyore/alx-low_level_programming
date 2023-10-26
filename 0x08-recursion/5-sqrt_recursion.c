@@ -12,7 +12,7 @@ int _sqrt_recursive(int guess, int n)
 	if (guess * guess == n)
 		return (guess);
 	else if (guess * guess < n)
-		return (_sqrt_recursive(n, guess + 1));
+		return (_sqrt_recursive(guess + 1, n));
 	else
 		return (-1);
 }
@@ -30,5 +30,5 @@ int _sqrt_recursion(int n)
 	if (n == 0)
 		return (0);
 	else
-		return (_sqrt_recursive(n, 1));
+		return (_sqrt_recursive(1, n));
 }
