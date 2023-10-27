@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 #include <stdlib.h>
 
 /**
@@ -12,27 +11,18 @@
 int main(int argc, char *argv[])
 {
 	int i, sum = 0;
+	char *end;
 
-	if (argc == 1)
+	for (i = 1; i < argc; i++)
 	{
-		printf("%d\n", sum);
-	}
-	else if (argc < 1)
-	{
-		printf("Error\n");
-	}
-	else
-	{
-		for (i = 1; i < argc; i++)
+		strtol(argv[i], &end, 10);
+		if (*end != '\0')
 		{
-			if (atoi(argv[i]) == 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			sum += atoi(argv[i]);
+			printf("Error\n");
+			return (1);
 		}
-		printf("%d\n", sum);
+		sum += atoi(argv[i]);
 	}
+	printf("%d\n", sum);
 	return (0);
 }
