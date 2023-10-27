@@ -2,7 +2,7 @@
 #include "main.h"
 
 /**
- * main - entry point
+ * main - prints its name, followed by a new line
  * @argc: size of argv
  * @argv: command line arguments
  *
