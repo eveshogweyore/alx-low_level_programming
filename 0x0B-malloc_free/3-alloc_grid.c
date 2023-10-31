@@ -16,9 +16,10 @@ int **alloc_grid(int width, int height)
 
 	twodarray = (int **)malloc(width * sizeof(int *));
 	if (twodarray == NULL)
+	{
 		free(twodarray);
 		return (NULL);
-
+	}
 	for (i = 0; i < width; i++)
 	{
 		twodarray[i] = (int *)malloc(height * sizeof(int));
