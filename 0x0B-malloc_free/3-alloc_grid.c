@@ -9,32 +9,27 @@
  */
 int **alloc_grid(int width, int height)
 {
-    int **twodarray, i, j, k;
+	int **twodarray, i, j;
 
-    if (width == 0 || height == 0)
-        return (NULL);
+	if (width == 0 || height == 0)
+		return (NULL);
 
-    twodarray = (int **)malloc(width * sizeof(int *));
-    if (twodarray == NULL)
-        return (NULL);
+	twodarray = (int **)malloc(width * sizeof(int *));
+	if (twodarray == NULL)
+		return (NULL);
 
-    for (i = 0; i < width; i++)
-    {
-        twodarray[i] = (int *)malloc(height * sizeof(int));
-        if (twodarray[i] == NULL)
-        {
-            for (k = 0; k < i; k++)
-            {
-                free(twodarray[k]);
-            }
-            free(twodarray);
-            return NULL;
-        }
-        for (j = 0; j < height; j++)
-        {
-            twodarray[i][j] = 0;
-        }
-    }
+	for (i = 0; i < width; i++)
+	{
+		twodarray[i] = (int *)malloc(height * sizeof(int));
+		if (twodarray[i] == NULL)
+			return (NULL);
+	}
 
-    return (twodarray);
+	for (i = 0; i < width; i++)
+	{
+		for (j = 0; j < height; j++)
+			twodarray[i][j] = 0;
+	}
+
+	return (twodarray);
 }
