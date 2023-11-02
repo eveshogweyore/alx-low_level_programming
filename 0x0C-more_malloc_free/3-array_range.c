@@ -10,27 +10,17 @@
  */
 int *array_range(int min, int max)
 {
-	int *numarray, length = 0, checkmin = min;
-	unsigned int i;
+	int *numarray, i;
 
 	if (min > max)
 		return (NULL);
 
-	while (checkmin != max)
-	{
-		checkmin++;
-		length++;
-	}
-	printf("Length is %d\n", length);
-	numarray = malloc(length * sizeof(int));
+	numarray = malloc(((max -min) + 1) * sizeof(int));
 	if (numarray == NULL)
-	{
-		free(numarray);
 		return (NULL);
-	}
 
-	for (i = 0; i < (sizeof(int) * length); i++)
-		numarray[i] = min + i;
+	for (i = 0; min <= max; i++, min++)
+		numarray[i] = min;
 
 	return (numarray);
 }
