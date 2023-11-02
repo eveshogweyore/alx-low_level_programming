@@ -16,7 +16,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	arraymem = calloc(nmemb, sizeof(size));
-	if (arraymem == 0)
+	if (arraymem == NULL)
 		return (NULL);
 
 	return (arraymem);
