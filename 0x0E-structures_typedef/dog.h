@@ -2,6 +2,11 @@
 #define _DOG_H_
 
 /**
+ * typedef for struct dog
+ */
+typedef struct dog dog_t;
+
+/**
  * struct dog - defines a dog
  * @name: name of dog
  * @age: age of dog
