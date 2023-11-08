@@ -2,7 +2,7 @@
 
 /**
  * get_op_func - selects the current function to perform
- * 				 the operation asked by the user
+ * the operation asked by the user
  * @s: the operation
  *
  * Return: On success (function to be performed)

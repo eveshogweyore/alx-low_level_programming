@@ -2,6 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * main - performs arithmetic operations on two numbers
+ * @argc: number of arguments passed
+ * @argv: array of arguments passed
+ *
+ * Return: On success (result of arithmetic operation
+ * otherwise (Error)
+ */
 int main(int argc, char *argv[])
 {
 	int (*ops_function)(int, int);
