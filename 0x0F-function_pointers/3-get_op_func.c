@@ -25,10 +25,10 @@ int (*get_op_func(char *s))(int, int)
 		if (s[0] == ops[i].op[0])
 			return (ops[i].f);
 	}
-	if (ops[i].op == NULL)
-	{
-		printf("Error\n");
-		exit(99);
-	}
+	/*if (ops[i].op == NULL)*/
+	/*{*/
+		/*printf("Error\n");*/
+		/*exit(99);*/
+	/*}*/
 	return (NULL);
 }

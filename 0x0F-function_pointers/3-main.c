@@ -1,6 +1,4 @@
 #include "3-calc.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * main - performs arithmetic operations on two numbers
@@ -18,6 +16,11 @@ int main(int argc, char *argv[])
 	if (argc == 4)
 	{
 		ops_function = get_op_func(argv[2]);
+		if (ops_function == NULL)
+		{
+			printf("Error\n");
+			exit(99);
+		}
 		result = ops_function(atoi(argv[1]), atoi(argv[3]));
 		printf("%d\n", result);
 	}
