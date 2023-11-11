@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 	char *allow = "cifs";
 
 	va_start(args, format);
-	while (format)
+	while (format != NULL)
 	{
 		switch (format[i])
 		{
