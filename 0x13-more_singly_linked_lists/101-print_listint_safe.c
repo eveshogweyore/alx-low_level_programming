@@ -19,7 +19,10 @@ size_t print_listint_safe(const listint_t *head)
 		for (i = 0; i < length; i++)
 		{
 			if (buffer[i] == (void *)head)
+			{
+				printf("-> [%p] %d\n", (void *)head, head->n);
 				return (length);
+			}
 		}
 
 		printf("[%p] %d\n", (void *)head, head->n);
