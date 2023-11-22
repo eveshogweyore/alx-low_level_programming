@@ -12,7 +12,7 @@ size_t print_listint_safe(const listint_t *head)
 	listint_t *buffer[1024];
 
 	if (!head)
-		exit(98);
+		return (length);
 
 	for (; head; head = head->next, length++)
 	{
