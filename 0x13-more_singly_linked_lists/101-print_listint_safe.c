@@ -8,27 +8,22 @@
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t length = 0;
-	listint_t *mem = NULL;
-	listint_t *temp;
+	size_t i, length = 0;
+	listint_t *buffer[1024];
 
 	if (!head)
 		exit(98);
 
 	for (; head; head = head->next, length++)
 	{
-		if (mem)
+		for (i = 0; i < length; i++)
 		{
-			temp = mem;
-			for (; temp; temp = temp->next)
-			{
-				if (temp->n == (int)(long int)head)
-					return (length);
-			}
+			if (buffer[i] == (void *)head)
+				return (length);
 		}
 
 		printf("[%p] %d\n", (void *)head, head->n);
-		add_nodeint(&mem, (long int)head);
+		buffer[length] = (void *)head;
 	}
 
 	return (length);
