@@ -19,7 +19,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	for (i = (sizeof(unsigned int) - 1); i >= 0; i--)
+	for (i = (sizeof(long int) - 1); i >= 0; i--)
 	{
 		byte = ((char *)&n)[i];
 		for (j = 7; j >= 0; j--)
