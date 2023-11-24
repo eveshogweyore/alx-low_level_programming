@@ -24,7 +24,7 @@ void print_binary(unsigned long int n)
 		byte = ((char *)&n)[i];
 		for (j = 7; j >= 0; j--)
 		{
-			bit = ((byte>>j) & 1);
+			bit = ((byte >> j) & 1);
 			if (bit == 1 && flag == 0)
 				flag = 1;
 			if (flag == 1)
