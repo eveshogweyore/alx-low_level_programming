@@ -22,7 +22,7 @@ int get_bit(unsigned long int n, unsigned int index)
 		}
 	}
 
-	if ((length - 1) < index)
+	if (index > length)
 		return (-1);
 
 	if (n & mask)
