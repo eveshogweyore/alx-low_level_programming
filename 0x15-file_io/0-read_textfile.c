@@ -21,7 +21,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 
 	length = read(file_d, file_buffer, letters);
 
-	bytes_written = write(STDIN_FILENO, file_buffer, length);
+	bytes_written = write(STDOUT_FILENO, file_buffer, length);
 	if (bytes_written == -1 || length > bytes_written)
 		return (0);
 
