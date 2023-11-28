@@ -5,7 +5,7 @@
 /**
  * create_file - creates a file
  * @filename: name of file to create
- * @text_content
+ * @text_content: the actual text to be sent to file descriptor
  *
  * Return: On success, 1. On error, -1.
  */
@@ -17,7 +17,7 @@ int create_file(const char *filename, char *text_content)
 	for (i = 0; text_content[i]; i++)
 		;
 
-	if (!filename)
+	if (!filename || !text_content)
 		return (-1);
 
 	file_d = open(filename, O_CREAT | O_RDWR | O_TRUNC, mode);
