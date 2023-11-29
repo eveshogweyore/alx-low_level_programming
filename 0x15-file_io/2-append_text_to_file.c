@@ -1,3 +1,5 @@
+#include <unistd.h>
+#include <fcntl.h>
 #include "main.h"
 
 /**
@@ -11,7 +13,10 @@ int append_text_to_file(const char *filename, char *text_content)
 {
 	int file_d, bytes_copied, length;
 
-	file_d = open(filename, O_APPEND);
+	if (!filename)
+		return (-1);
+
+	file_d = open(filename, O_RDWR | O_APPEND);
 	if (file_d == -1)
 		return (-1);
 
@@ -19,7 +24,7 @@ int append_text_to_file(const char *filename, char *text_content)
 		;
 	bytes_copied = write(file_d, text_content, length);
 	if (bytes_copied == -1)
-		return (-1)
+		return (-1);
 
 	return (1);
 }
