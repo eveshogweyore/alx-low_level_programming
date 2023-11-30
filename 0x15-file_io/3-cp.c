@@ -20,7 +20,7 @@ void cp(const char *file_from, const char *file_to)
 	ff_d = open(file_from, O_RDONLY);
 	if (ff_d == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
 
