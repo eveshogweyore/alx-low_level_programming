@@ -23,7 +23,7 @@ void cp(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Can't read from file %s", file_from);
 		exit(98);
 	}
-	ft_d = open(file_to, O_CREAT | O_WRONLY| O_TRUNC, mode);
+	ft_d = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, mode);
 	if (ft_d == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
@@ -45,6 +45,13 @@ void cp(const char *file_from, const char *file_to)
 	}
 }
 
+/**
+ * main - Entry point.
+ * @argc: Total number of arguments passed.
+ * @argv: Files passed to the function.
+ *
+ * Return: On success, 0.
+ */
 int main(int argc, char **argv)
 {
 	if (argc != 3)
