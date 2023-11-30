@@ -13,7 +13,7 @@
  */
 void cp(const char *file_from, const char *file_to)
 {
-	int ff_d, ft_d, bytes;
+	int ff_d, ft_d, bytes, bytes_written;
 	char ft_buffer[1024];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
@@ -32,7 +32,11 @@ void cp(const char *file_from, const char *file_to)
 	}
 
 	while ((bytes = read(ff_d, ft_buffer, 1024)))
-		write(ft_d, ft_buffer, bytes);
+	{
+		bytes_written = write(ft_d, ft_buffer, bytes);
+		if (bytes_written == -1)
+			exit(99);
+	}
 
 	if (close(ff_d) == -1)
 	{
