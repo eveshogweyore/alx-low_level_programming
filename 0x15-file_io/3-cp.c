@@ -36,12 +36,12 @@ void cp(const char *file_from, const char *file_to)
 
 	if (close(ff_d) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", ff_d);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ff_d);
 		exit(100);
 	}
 	if (close(ft_d) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d", ft_d);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ft_d);
 		exit(100);
 	}
 }
@@ -57,7 +57,7 @@ int main(int argc, char **argv)
 {
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
