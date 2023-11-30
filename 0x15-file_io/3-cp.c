@@ -20,13 +20,14 @@ void cp(const char *file_from, const char *file_to)
 	ff_d = open(file_from, O_RDONLY);
 	if (ff_d == -1)
 	{
-		dprintf(STDERR_FILENO, "Can't read from file %s", file_from);
+		dprintf(STDERR_FILENO, "Can't read from file %s\n", file_from);
 		exit(98);
 	}
-	ft_d = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, mode);
+
+	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, mode);
 	if (ft_d == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
