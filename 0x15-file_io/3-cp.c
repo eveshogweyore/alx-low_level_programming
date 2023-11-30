@@ -34,11 +34,6 @@ void cp(const char *file_from, const char *file_to)
 	while (bytes)
 	{
 		bytes = read(ff_d, ft_buffer, 1024);
-		if (bytes == -1)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
-			exit(99);
-		}	
 		bytes_written = write(ft_d, ft_buffer, bytes);
 		if (bytes_written == -1)
 		{
