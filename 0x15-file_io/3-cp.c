@@ -24,7 +24,7 @@ void cp(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, mode);
 	if (ft_d == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
