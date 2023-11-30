@@ -13,7 +13,7 @@
  */
 void cp(const char *file_from, const char *file_to)
 {
-	int ff_d, ft_d, bytes, bytes_written;
+	int ff_d, ft_d, bytes = 1, bytes_written;
 	char ft_buffer[1024];
 	mode_t mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
 
@@ -24,15 +24,21 @@ void cp(const char *file_from, const char *file_to)
 		exit(98);
 	}
 
-	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, mode);
+	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (ft_d == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 
-	while ((bytes = read(ff_d, ft_buffer, 1024)))
+	while (bytes)
 	{
+		bytes = read(ff_d, ft_buffer, 1024);
+		if (bytes == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(99);
+		}	
 		bytes_written = write(ft_d, ft_buffer, bytes);
 		if (bytes_written == -1)
 		{
