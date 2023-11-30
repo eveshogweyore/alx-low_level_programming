@@ -35,7 +35,10 @@ void cp(const char *file_from, const char *file_to)
 	{
 		bytes_written = write(ft_d, ft_buffer, bytes);
 		if (bytes_written == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
+		}
 	}
 
 	if (close(ff_d) == -1)
