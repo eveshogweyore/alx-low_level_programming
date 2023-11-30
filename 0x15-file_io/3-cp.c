@@ -23,17 +23,19 @@ void cp(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	}
-
 	ft_d = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, mode);
 	if (ft_d == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-
-	while (bytes)
+	while ((bytes = read(ff_d, ft_buffer, 1024)))
 	{
-		bytes = read(ff_d, ft_buffer, 1024);
+		if (bytes == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
+			exit(98);
+		}
 		bytes_written = write(ft_d, ft_buffer, bytes);
 		if (bytes_written == -1)
 		{
@@ -41,7 +43,6 @@ void cp(const char *file_from, const char *file_to)
 			exit(99);
 		}
 	}
-
 	if (close(ff_d) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ff_d);
