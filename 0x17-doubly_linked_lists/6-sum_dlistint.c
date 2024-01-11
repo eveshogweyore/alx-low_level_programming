@@ -1,7 +1,8 @@
 #include "lists.h"
 
 /**
- * sum_dlistint - returns the sum of all the data (n) of a dlistint_t linked list
+ * sum_dlistint - returns the sum of all the data (n) of a
+ *                dlistint_t linked list
  * @head: Pointer to first node in linked list.
  *
  * Return: On success, sum of all data in list. On failure, NULL.
