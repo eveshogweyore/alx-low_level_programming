@@ -34,10 +34,6 @@ typedef struct hash_table_s
 	hash_node_t **array;
 } hash_table_t;
 
-hash_node_t *create_item(char *key, char *value);
-void c_hash_node_fail(hash_node_t *item);
-void c_hash_table_fail(hash_table_t *item);
-void c_str_fail(char *item);
 hash_table_t *hash_table_create(unsigned long int size);
 
 #endif /* hash_tables.h */
