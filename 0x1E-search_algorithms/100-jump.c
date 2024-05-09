@@ -2,21 +2,6 @@
 #include <math.h>
 
 /**
- * _min - checks for the minimum of two integer numbers.
- * @a: The first number.
- * @b: The second number.
- *
- * Return: On success, the minimum number.
- */
-size_t _min(size_t a, size_t b)
-{
-	if (a < b)
-		return (a);
-
-	return (b);
-}
-
-/**
  * jump_search - jump search for a value in a sorted array.
  * @array: pointer to the first element of the array to search in.
  * @size: number of elements in the array.
@@ -27,40 +12,36 @@ size_t _min(size_t a, size_t b)
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t a = 0, j = sqrt(size), b = j;
+	size_t jump = sqrt(size);
+	size_t low = 0, high = jump;
 
 	if (!array)
 		return (-1);
 
-	while (array[b] < value)
+	for (; low < size; low += jump, high += jump)
 	{
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-		a = b;
-		b += j;
-		if (a >= size)
+		printf("Value checked array[%ld] = [%d]\n", low, array[low]);
+
+		if (high >= size) {
+			high = size - 1;
+			printf("Value found between indexes [%lu] and [%lu]\n", low, high);
+			break;
+		}
+
+		if (value <= array[high])
 		{
-			a -= j;
-			b -= j;
+			printf("Value found between indexes [%lu] and [%lu]\n", low, high);
 			break;
 		}
 	}
 
-	if (b < size)
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-	printf("Value found between indexes [%lu] and [%lu]\n", a, b);
 
-	while (array[a] < value)
+	for (; low <= high; low++)
 	{
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-		a += 1;
-		if (a == _min(b, size))
-			break;
-	}
+		printf("Value checked array[%ld] = [%d]\n", low, array[low]);
 
-	if (array[a] == value)
-	{
-		printf("Value checked array[%lu] = [%d]\n", a, array[a]);
-		return (a);
+		if (array[low] == value)
+			return (low);
 	}
 
 	return (-1);
